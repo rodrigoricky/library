@@ -4,28 +4,28 @@ import { BsFillPlusCircleFill } from 'react-icons/bs'
 const MoreInfoModal = () => {
   const info=[
     {
-      title:'How the first lesson with teacher will be?',
-      des:'By the end of the trial lesson, you will be able to determine for yourself whether this kind of online lesson is right for you or not. In our experience, most students appreciate the benefits of online education and decide to study online.'
+      title:'Question #1',
+      des:'Answer, Lorem Ipsum'
     },
     {
-      title:'How the first lesson with teacher will be?',
-      des:'By the end of the trial lesson, you will be able to determine for yourself whether this kind of online lesson is right for you or not. In our experience, most students appreciate the benefits of online education and decide to study online.'
+      title:'Question #1',
+      des:'Answer, Lorem Ipsum'
     },
     {
-      title:'How the first lesson with teacher will be?',
-      des:'By the end of the trial lesson, you will be able to determine for yourself whether this kind of online lesson is right for you or not. In our experience, most students appreciate the benefits of online education and decide to study online.'
+      title:'Question #2',
+      des:'Answer, Lorem Ipsum'
     },
     {
-      title:'How the first lesson with teacher will be?',
-      des:'By the end of the trial lesson, you will be able to determine for yourself whether this kind of online lesson is right for you or not. In our experience, most students appreciate the benefits of online education and decide to study online.'
+      title:'Question #2',
+      des:'Answer, Lorem Ipsum'
     },
     {
-      title:'How the first lesson with teacher will be?',
-      des:'By the end of the trial lesson, you will be able to determine for yourself whether this kind of online lesson is right for you or not. In our experience, most students appreciate the benefits of online education and decide to study online.'
+      title:'Question #3',
+      des:'Answer, Lorem Ipsum'
     },
     {
-      title:'How the first lesson with teacher will be?',
-      des:'By the end of the trial lesson, you will be able to determine for yourself whether this kind of online lesson is right for you or not. In our experience, most students appreciate the benefits of online education and decide to study online.'
+      title:'Question #3',
+      des:'Answer, Lorem Ipsum'
     },
   ]
   return (
@@ -34,7 +34,7 @@ const MoreInfoModal = () => {
           MORE INFO
       </p>
       <p className="text-gray-800 text-4xl font-medium capitalize mb-10">
-      Common questions
+      Questions
       </p>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-10">
       {info.map((inf,i)=>{
