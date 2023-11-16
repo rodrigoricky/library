@@ -5,7 +5,7 @@ const MoreInfoModal = () => {
   const allQuestions = [
     {
       question: ' Sino ang kuba ng Notre Dame?',
-      choices: [' Claude Frollo', ' Phoebus', ' Quasimodo', ' Quasimodo'],
+      choices: [' Claude Frollo', ' Phoebus', ' Quasimodo', ' Quesadilla'],
       correctAnswer: 3,
     },
     {
@@ -81,6 +81,8 @@ const MoreInfoModal = () => {
             <div className="question">
               <p className="question-text">{allQuestions[currentQuestion].question}</p>
 
+              <br/>
+              
               <ul className="answer-choices">
                 {allQuestions[currentQuestion].choices.map((choice, index) => (
                   <li key={index}>
@@ -98,7 +100,7 @@ const MoreInfoModal = () => {
               <div className="button-container">
                 {currentQuestion > 0 && (
                   <>
-                  <button onClick={handlePrevQuestion}>Previous Question</button> + { ' | ' }
+                  <button onClick={handlePrevQuestion}>Previous Question</button>  { ' | ' }
                   </>
                 )}
                 

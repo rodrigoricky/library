@@ -29,7 +29,7 @@ export default function Teacher() {
         <div className="flex flex-col gap-5 ">
           <img src="/assets/3.png" alt="v1" width={401} style={{borderRadius:"10px"}}/>
           <a href='/filipino.pdf' className="hover-underline-animation">
-          <p className="text-2xl font-semibold" >Kuban ng Notre Dame</p>
+          <p className="text-2xl font-semibold" >Kuba ng Notre Dame</p>
           </a>
           <div className="flex items-center gap-2">
             <img src="/assets/ph.png" width={40} alt="itersfgjds" />
