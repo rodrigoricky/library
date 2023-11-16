@@ -3,7 +3,9 @@ import Image from "next/image";
 import Cta from "../components/Cta";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-import MoreInfoModal from "../components/MoreInfoModal";
+import EngModal from "../components/EngModal";
+import FilModal from "../components/FilModal";
+
 import MoreInfo from "../components/MoreInfoModal";
 import Navbar from "../components/Navbar";
 import Student from "../components/Student";
@@ -25,7 +27,8 @@ export default function Home() {
       
     <Hero/>
     <Teacher/>
-   <MoreInfoModal/>
+   <EngModal/>
+   <FilModal/>
     </div>
   );
 }
