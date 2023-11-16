@@ -1,48 +1,57 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/App.module.css';
 
-const MoreInfoModal = () => {
+const EngModal = () => {
  const allQuestions = [
     {
       question: 'Who is the genius inventor in the story?',
-      choices: [' Daedalus', ' Icarus', ' King Minos of Crete', ' Paciphae'],
-      correctAnswer: 2,
+      choices: [' A. Daedalus', ' B. Icarus', ' C. King Minos of Crete', ' D. Paciphae'],
+      correctAnswer: 0,
     },
     {
       question: 'Who cursed Pasiphae to fall in love with the king\'s most prized bull?',
-      choices: [' Daedalus', ' King Minos', ' Poseidon', ' Zeus'],
-      correctAnswer: 1,
+      choices: [' A. Daedalus', ' B. King Minos', ' C. Poseidon', ' D. Zeus'],
+      correctAnswer: 2,
     },
     {
       question: 'What did Daedalus create to escape the tower?',
-      choices: [' A Labyrinth', ' A life-like bull', ' A pair of giant wings made from wax and feathers', ' A ship with a mast for people to manipulate the wind when traveling in waters'],
+      choices: [' A. A Labyrinth', ' B. A life-like bull', ' C. A pair of giant wings made from wax and feathers', ' D. A ship with a mast for people to manipulate the wind when traveling in waters'],
       correctAnswer: 2,
     },
  ];
 
- const [currentQuestion, setCurrentQuestion] = useState(0);
- const [answers, setAnswers] = useState([]);
- const [correctAnswers, setCorrectAnswers] = useState(0);
+ const [currentQuestionE, setCurrentQuestionE] = useState(0);
+ const [answersE, setAnswersE] = useState([]);
+ const [correctAnswersE, setCorrectAnswersE] = useState(0);
 
  const handleAnswerChange = (e) => {
     const answerIndex = parseInt(e.target.value);
-    const updatedAnswers = [...answers];
-    updatedAnswers[currentQuestion] = answerIndex;
-    setAnswers(updatedAnswers);
+    const updatedAnswers = [...answersE];
+    updatedAnswers[currentQuestionE] = answerIndex;
+    setAnswersE(updatedAnswers);
  };
 
+ const checkAnswers = () => {
+  let correct = 0;
+  for (let i = 0; i < allQuestions.length; i++) {
+    if (answersE[i] === allQuestions[i].correctAnswer) {
+      correct++;
+    }
+  }
+  setCorrectAnswersE(correct);
+};
 
  const handleNextQuestion = () => {
-  if (currentQuestion < allQuestions.length - 1) {
-     setCurrentQuestion(currentQuestion + 1);
-  } else if (currentQuestion === allQuestions.length - 1) {
+  if (currentQuestionE < allQuestions.length - 1) {
+     setCurrentQuestionE(currentQuestionE + 1);
+  } else if (currentQuestionE === allQuestions.length - 1) {
      const correct = checkAnswers();
-     setCorrectAnswers(correct);
+     setCorrectAnswersE(correct);
  
      // Display quiz results
      const resultDiv = document.createElement('div');
      resultDiv.className = 'result';
-     resultDiv.textContent = `Your final score is: ${correct} correct answers out of ${allQuestions.length}`;
+     resultDiv.textContent = `Your final score is: ${correctAnswersE} correct answers out of ${allQuestions.length}`;
      document.getElementById('quiz').appendChild(resultDiv);
  
      // Disable "Next Question" button
@@ -52,14 +61,14 @@ const MoreInfoModal = () => {
  };
 
  const handlePrevQuestion = () => {
-    if (currentQuestion > 0)
-      setCurrentQuestion(currentQuestion - 1);
+    if (currentQuestionE > 0)
+      setCurrentQuestionE(currentQuestionE - 1);
  };
 
  const handleRestartQuiz = () => {
-    setCurrentQuestion(0);
-    setAnswers([]);
-    setCorrectAnswers(0);
+    setCurrentQuestionE(0);
+    setAnswersE([]);
+    setCorrectAnswersE(0);
  };
 
   return (
@@ -74,14 +83,14 @@ const MoreInfoModal = () => {
    
       {allQuestions.length > 0 && (
         <div className="quiz-container">
-          {currentQuestion < allQuestions.length && (
+          {currentQuestionE < allQuestions.length && (
             <div className="question">
-              <p className="question-text">{allQuestions[currentQuestion].question}</p>
+              <p className="question-text">{allQuestions[currentQuestionE].question}</p>
 
               <br/>
               
               <ul className="answer-choices">
-                {allQuestions[currentQuestion].choices.map((choice, index) => (
+                {allQuestions[currentQuestionE].choices.map((choice, index) => (
                   <li key={index}>
                     <input
                       type="radio"
@@ -95,14 +104,14 @@ const MoreInfoModal = () => {
               </ul>
                   <br/>
               <div className="button-container">
-                {currentQuestion > 0 && ( 
+                {currentQuestionE > 0 && ( 
                   <>
                   <button onClick={handlePrevQuestion}>Previous Question</button>  { ' | ' }
                   </>
                 )}
                 
                 <button onClick={handleNextQuestion}>
-                  {currentQuestion === allQuestions.length - 1
+                  {currentQuestionE === allQuestions.length - 1
                     ? 'Finish Quiz'
                     : 'Next Question'}
                 </button>
@@ -110,10 +119,10 @@ const MoreInfoModal = () => {
             </div>
           )}
 
-          {currentQuestion === allQuestions.length && (
+          {currentQuestionE === allQuestions.length && (
             <div className="result">
               <p>
-                Your final score is: {correctAnswers} correct answers out of {allQuestions.length}
+                Your final score is: {correctAnswersE} correct answers out of {allQuestions.length}
               </p>
               <button onClick={handleRestartQuiz}>Restart Quiz</button>
             </div>
@@ -124,6 +133,6 @@ const MoreInfoModal = () => {
   );
 };
 
-export default MoreInfoModal;
+export default EngModal;
       
    

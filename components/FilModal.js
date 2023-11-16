@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/App.module.css';
 
-const MoreInfoModal = () => {
+const FilModal = () => {
   const allQuestions = [
     {
       question: ' Sino ang kuba ng Notre Dame?',
-      choices: [' Claude Frollo', ' Phoebus', ' Quasimodo', ' Quesadilla'],
+      choices: [' A. Claude Frollo', ' B. Phoebus', ' C. Quasimodo', ' D. Quesadilla'],
       correctAnswer: 3,
     },
     {
       question: ' Si La Esmeralda ay isang...',
-      choices: [' Magaling na mang-aawit', ' Mananayaw', ' Mangangalakal', ' Tagapagluto'],
+      choices: [' A. Magaling na mang-aawit', ' B. Mananayaw', ' C. Mangangalakal', ' D. Tagapagluto'],
       correctAnswer: 2,
     },
     {
       question: ' Ano ang naging kapalaran ni La Esmeralda sa dulo ng kuwento?',
-      choices: [' Ikinulong dahil sa pagpatay kay Phoebus', ' Nagtagumpay dahil nakamit ang pangarap', ' Namatay dahil sa parusa', ' Namatay dahil sa sakit'],
+      choices: [' A. Ikinulong dahil sa pagpatay kay Phoebus', ' B. Nagtagumpay dahil nakamit ang pangarap', ' C. Namatay dahil sa parusa', ' D. Namatay dahil sa sakit'],
       correctAnswer: 3,
     },
   ];
@@ -127,6 +127,6 @@ const MoreInfoModal = () => {
   );
 };
 
-export default MoreInfoModal;
+export default FilModal;
       
    
