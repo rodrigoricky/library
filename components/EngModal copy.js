@@ -10,7 +10,7 @@ const MoreInfoModal = () => {
     },
     {
       question: 'Who cursed Pasiphae to fall in love with the king\'s most prized bull?',
-      choices: [' Daedalus', ' King Minos', ' Poseidon', ' Zeus'],
+      choices: [' Daedalus', ' Mananayaw', ' Mangangalakal', ' Tagapaglut'],
       correctAnswer: 2,
     },
     {
@@ -31,7 +31,18 @@ const MoreInfoModal = () => {
     setAnswers(updatedAnswers);
  };
 
-
+ const checkAnswers = () => {
+  let correct = 0;
+  const selectedAnswers = [];
+  for (let i = 0; i < allQuestions.length; i++) {
+     if (answers[i] === allQuestions[i].correctAnswer) {
+       correct++;
+     }
+     selectedAnswers.push(<SelectedAnswer key={i} answer={allQuestions[i].choices[answers[i]]} correctAnswer={allQuestions[i].choices[allQuestions[i].correctAnswer]} />);
+  }
+  return <React.Fragment>{selectedAnswers}</React.Fragment>;
+ };
+ 
  const handleNextQuestion = () => {
   if (currentQuestion < allQuestions.length - 1) {
      setCurrentQuestion(currentQuestion + 1);

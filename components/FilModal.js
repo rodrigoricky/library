@@ -98,7 +98,7 @@ const MoreInfoModal = () => {
               </ul>
                   <br/>
               <div className="button-container">
-                {currentQuestion > 0 && (
+                {currentQuestion > 0 && ( 
                   <>
                   <button onClick={handlePrevQuestion}>Previous Question</button>  { ' | ' }
                   </>
@@ -128,3 +128,5 @@ const MoreInfoModal = () => {
 };
 
 export default MoreInfoModal;
+      
+   
