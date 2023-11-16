@@ -18,10 +18,11 @@ const MoreInfoModal = () => {
 
   ]
   return (
-    <div className="container mx-auto py-20">
+    <div className="container mx-auto py-20" style={{ marginBottom: '-50px'}}>
             <p className="text-gray-500 text-2xl font-medium uppercase my-3">
           Questions
       </p>
+      <br/>
       <p className="text-gray-800 text-4xl font-medium capitalize mb-10">
       English - Questions
       </p>

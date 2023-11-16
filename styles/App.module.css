@@ -1,0 +1,23 @@
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .3s;
+    margin-top: 5px;
+  }
+  
+  .hover-underline-animation:hover:after {
+    width: 100%;
+  }
+  
+  .question ul {
+    list-style: none;
+  }
