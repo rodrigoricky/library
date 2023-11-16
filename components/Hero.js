@@ -8,7 +8,7 @@ const Hero = () => {
         <Navbar />
         <div className="flex flex-col lg:flex-row justify-center  items-center gap-5 text-center">
           <div className="flex flex-col gap-5 lg:gap-10">
-            <p className=" text-2xl sm:text-4xl md:text-5xl lg:text-6xl justify-center font-medium">
+            <p className=" text-2xl sm:text-4xl md:text-5xl lg:text-4xl justify-center font-small">
               Grade 10 <br/><b>Poster Making </b><br/>Output
               
             </p>

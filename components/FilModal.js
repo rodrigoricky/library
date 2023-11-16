@@ -4,18 +4,18 @@ import '../styles/App.module.css';
 const MoreInfoModal = () => {
   const allQuestions = [
     {
-      question: 'Sino ang kuba ng Notre Dame?',
-      choices: ['Claude Frollo', 'Phoebus', 'Quasimodo', 'Quasimodo'],
+      question: ' Sino ang kuba ng Notre Dame?',
+      choices: [' Claude Frollo', ' Phoebus', ' Quasimodo', ' Quasimodo'],
       correctAnswer: 3,
     },
     {
-      question: 'Si La Esmeralda ay isang...',
-      choices: ['Magaling na mang-aawit', 'Mananayaw', 'Mangangalakal', 'Tagapagluto'],
+      question: ' Si La Esmeralda ay isang...',
+      choices: [' Magaling na mang-aawit', ' Mananayaw', ' Mangangalakal', ' Tagapagluto'],
       correctAnswer: 2,
     },
     {
-      question: 'Ano ang naging kapalaran ni La Esmeralda sa dulo ng kuwento?',
-      choices: ['Ikinulong dahil sa pagpatay kay Phoebus', 'Nagtagumpay dahil nakamit ang pangarap', 'Namatay dahil sa parusa', 'Namatay dahil sa sakit'],
+      question: ' Ano ang naging kapalaran ni La Esmeralda sa dulo ng kuwento?',
+      choices: [' Ikinulong dahil sa pagpatay kay Phoebus', ' Nagtagumpay dahil nakamit ang pangarap', ' Namatay dahil sa parusa', ' Namatay dahil sa sakit'],
       correctAnswer: 3,
     },
   ];
@@ -94,11 +94,14 @@ const MoreInfoModal = () => {
                   </li>
                 ))}
               </ul>
-
+                  <br/>
               <div className="button-container">
                 {currentQuestion > 0 && (
-                  <button onClick={handlePrevQuestion}>Previous Question</button>
+                  <>
+                  <button onClick={handlePrevQuestion}>Previous Question</button> + { ' | ' }
+                  </>
                 )}
+                
                 <button onClick={handleNextQuestion}>
                   {currentQuestion === allQuestions.length - 1
                     ? 'Finish Quiz'
