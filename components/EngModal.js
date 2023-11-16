@@ -4,18 +4,18 @@ import '../styles/App.module.css';
 const MoreInfoModal = () => {
   const allQuestions = [
     {
-      question: ' Who is the genius inventor in the story?',
-      choices: [' Daedalus', ' Icarus', ' King Minos of Crete', ' Paciphae'],
+      question: 'Who is the genius inventor in the story?',
+      choices: ['Daedalus', 'Icarus', 'King Minos of Crete', 'Paciphae'],
       correctAnswer: 3,
     },
     {
-      question: ' Who cursed Pasiphae to fall inlove to the Kings most prized bull?',
-      choices: [' Daedalus', ' Mananayaw', ' Mangangalakal', ' Tagapagluto'],
+      question: 'Who cursed Pasiphae to fall in love with the king\'s most prized bull?',
+      choices: ['Daedalus', 'Mananayaw', 'Mangangalakal', 'Tagapaglut'],
       correctAnswer: 2,
     },
     {
-      question: ' What did Daedalus create to escape the tower? ',
-      choices: [' A Labyrinth', ' A life like bull', ' A Pair of Giant wings made from wax and feathers', ' A ship with a mast for people to manipulate the wind when traveling in waters'],
+      question: 'What did Daedalus create to escape the tower?',
+      choices: ['A Labyrinth', 'A life-like bull', 'A pair of giant wings made from wax and feathers', 'A ship with a mast for people to manipulate the wind when traveling in waters'],
       correctAnswer: 3,
     },
   ];
@@ -24,17 +24,17 @@ const MoreInfoModal = () => {
   const [answers, setAnswers] = useState([]);
   const [correctAnswers, setCorrectAnswers] = useState(0);
 
+  useEffect(() => {
+    // Remove checkmark from previous answer choices
+    const previousAnswerChoices = document.querySelectorAll('.answer-choices input[type="radio"]:checked');
+    for (let i = 0; i < previousAnswerChoices.length; i++) {
+      previousAnswerChoices[i].checked = false;
+    }
+  }, [answers]);
+
   const handleAnswerChange = (e) => {
     const answerIndex = parseInt(e.target.value);
     setAnswers([...answers, answerIndex]);
-  
-    useEffect(() => {
-      // Remove checkmark from previous answer choices
-      const previousAnswerChoices = document.querySelectorAll('.answer-choices input[type="radio"]:checked');
-      for (let i = 0; i < previousAnswerChoices.length; i++) {
-        previousAnswerChoices[i].checked = false;
-      }
-    }, [answers]);
   };
 
   const checkAnswers = () => {
@@ -52,13 +52,13 @@ const MoreInfoModal = () => {
       setCurrentQuestion(currentQuestion + 1);
     } else if (currentQuestion === allQuestions.length - 1) {
       checkAnswers();
-  
+
       // Display quiz results
       const resultDiv = document.createElement('div');
       resultDiv.className = 'result';
       resultDiv.textContent = `Your final score is: ${correctAnswers} correct answers out of ${allQuestions.length}`;
       document.getElementById('quiz').appendChild(resultDiv);
-  
+
       // Disable "Next Question" button
       const nextButton = document.querySelector('.button-container button:last-child');
       nextButton.disabled = true;
