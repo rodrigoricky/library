@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/App.module.css';
 
 const MoreInfoModal = () => {
   const allQuestions = [
     {
       question: 'Who is the genius inventor in the story?',
-      choices: ['Daedalus', 'Icarus', 'King Minos of Crete', 'Paciphae'],
+      choices: [' Daedalus', ' Icarus', ' King Minos of Crete', ' Paciphae'],
       correctAnswer: 3,
     },
     {
       question: 'Who cursed Pasiphae to fall in love with the king\'s most prized bull?',
-      choices: ['Daedalus', 'Mananayaw', 'Mangangalakal', 'Tagapaglut'],
+      choices: [' Daedalus', ' Mananayaw', ' Mangangalakal', ' Tagapaglut'],
       correctAnswer: 2,
     },
     {
       question: 'What did Daedalus create to escape the tower?',
-      choices: ['A Labyrinth', 'A life-like bull', 'A pair of giant wings made from wax and feathers', 'A ship with a mast for people to manipulate the wind when traveling in waters'],
+      choices: [' A Labyrinth', ' A life-like bull', ' A pair of giant wings made from wax and feathers', ' A ship with a mast for people to manipulate the wind when traveling in waters'],
       correctAnswer: 3,
     },
   ];
@@ -24,19 +24,26 @@ const MoreInfoModal = () => {
   const [answers, setAnswers] = useState([]);
   const [correctAnswers, setCorrectAnswers] = useState(0);
 
-  useEffect(() => {
+
+
+  const handleAnswerChange = (e) => {
+    const answerIndex = parseInt(e.target.value);
+    setAnswers([...answers, answerIndex]);
+  
+    // Check if useEffect has already run
+    const hasEffectRun = useRef(false);
+    if (!hasEffectRun.current) {
+      hasEffectRun.current = true;
+      return;
+    }
+  
     // Remove checkmark from previous answer choices
     const previousAnswerChoices = document.querySelectorAll('.answer-choices input[type="radio"]:checked');
     for (let i = 0; i < previousAnswerChoices.length; i++) {
       previousAnswerChoices[i].checked = false;
     }
-  }, [answers]);
-
-  const handleAnswerChange = (e) => {
-    const answerIndex = parseInt(e.target.value);
-    setAnswers([...answers, answerIndex]);
   };
-
+  
   const checkAnswers = () => {
     let correct = 0;
     for (let i = 0; i < allQuestions.length; i++) {
