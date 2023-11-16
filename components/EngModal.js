@@ -6,17 +6,17 @@ const MoreInfoModal = () => {
     {
       question: 'Who is the genius inventor in the story?',
       choices: [' Daedalus', ' Icarus', ' King Minos of Crete', ' Paciphae'],
-      correctAnswer: 3,
+      correctAnswer: 2,
     },
     {
       question: 'Who cursed Pasiphae to fall in love with the king\'s most prized bull?',
       choices: [' Daedalus', ' King Minos', ' Poseidon', ' Zeus'],
-      correctAnswer: 2,
+      correctAnswer: 1,
     },
     {
       question: 'What did Daedalus create to escape the tower?',
       choices: [' A Labyrinth', ' A life-like bull', ' A pair of giant wings made from wax and feathers', ' A ship with a mast for people to manipulate the wind when traveling in waters'],
-      correctAnswer: 3,
+      correctAnswer: 2,
     },
  ];
 
