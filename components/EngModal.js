@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/App.module.css';
 
 const MoreInfoModal = () => {
@@ -29,21 +29,8 @@ const MoreInfoModal = () => {
   const handleAnswerChange = (e) => {
     const answerIndex = parseInt(e.target.value);
     setAnswers([...answers, answerIndex]);
-  
-    // Check if useEffect has already run
-    const hasEffectRun = useRef(false);
-    if (!hasEffectRun.current) {
-      hasEffectRun.current = true;
-      return;
-    }
-  
-    // Remove checkmark from previous answer choices
-    const previousAnswerChoices = document.querySelectorAll('.answer-choices input[type="radio"]:checked');
-    for (let i = 0; i < previousAnswerChoices.length; i++) {
-      previousAnswerChoices[i].checked = false;
-    }
   };
-  
+
   const checkAnswers = () => {
     let correct = 0;
     for (let i = 0; i < allQuestions.length; i++) {
